@@ -1,0 +1,232 @@
+/* universal selector */
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+}
+
+/* element selector */
+h2 {
+    color: red;
+}
+
+/* ID selector */
+#description {
+    color: blue;
+}
+
+/* class selector */
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* attribute selector */
+a[href="https://www.healthline.com/nutrition/coffee-good-or-bad"] {
+    text-decoration: none;
+    color: red;
+}
+
+/* descendant selector */
+/* .container li {
+    color: green;
+} */
+
+/* .benefitsList li {
+    color: green;
+} */
+
+/* child selector */
+.benefitsList > li {
+    color: green;
+}
+
+/* adjacent sibling selector */
+.benefitsList + p {
+    color: orange
+}
+
+/* group selector */
+h2, #footer, #description {
+    font-weight: bold;
+}
+
+h2 {
+    color:blueviolet;
+}
+
+#description::first-letter {
+    text-transform: uppercase;
+    color: darkgreen;
+    font-size: 35px;
+}
+
+.nutrientsTable, th, td{
+    border: 1px solid black;
+}
+
+.nutrientsTable {
+    border-collapse: collapse;
+}
+
+/* pseudo-class */
+.nutrientsTable tr:first-child{
+    background-color: darkgray;
+}
+
+.nutrientsTable tr:last-child{
+    background-color: darkcyan;
+}
+
+.nutrientsTable tr:nth-child(odd){
+    background-color: lightgray;
+}
+
+#image-src:link {
+    color: red;
+}
+
+#image-src:visited {
+    color: green;
+}
+
+#image-src:hover {
+    color: blue;
+}
+
+#image-src:active {
+    color: yellow;
+}
+
+input[type="email"]:focus {
+    background-color: lightseagreen;
+    outline: none;
+    border-color: magenta;
+}
+
+input:focus::placeholder {
+    color: white;
+}
+
+input::placeholder {
+    color: red;
+}
+
+h2 {
+    padding: 10px;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+#however {
+    padding: 2px;
+    border: 1px solid red;
+    margin: 2px;
+}
+
+h2 {
+    padding-left: 80px;
+}
+
+/*
+    css box model: margin, border, padding, content
+
+    - it defines the design and layout of elements in a webpage
+
+    - content: the innermost part of the box, where the actual content of the element is displayed
+    - padding: the space around the content, inside of the border
+    - border: the border that goes around the padding and the content
+    - margin: the space outside of the border, between the border and the other elements on the page
+*/
+
+#coffee-img {
+    float: right
+}
+
+#nutrientsTableHeader {
+    border-bottom: 1px solid black;
+}
+
+/* h2 {
+    border: 4px ridge black;
+    color: brown;
+    border-radius: 40px;
+    background-color: lightgray;
+} */
+
+/*
+    border
+
+    border: width style color;
+    border: 1px solid black;
+
+    padding shorthand
+
+    padding: 10px 20px 30px 40px; // top right bottom left
+    padding: 20px; // all sides
+    padding: 20px 10px; // top-bottom right-left
+    padding: 20px 10px 30px; // top right-left bottom
+
+    margin shorthand
+
+    margin: 10px 20px 30px 40px; // top right bottom left
+    margin: 20px; // all sides
+    margin: 20px 10px; // top-bottom right-left
+    margin: 20px 10px 30px; // top right-left bottom
+*/
+
+h2 {
+    /* margin-top: 20px;
+    margin-right: 15;
+    margin-bottom: 18px;
+    margin-left: 10; */
+
+    /* margin: 20px 15px 18px 10px; */
+
+    /* margin: 20px 10px 25px 10px; */
+
+    /* margin: 20px 10px 25px; */
+
+    margin: 20px 10px;
+}
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    /*justify-content: space-around;*/
+    justify-content: center;
+    
+    
+}
+.menu li a{
+    text-decoration: none;
+}
+.menu li{
+    margin: 0 10px;
+    border: 1px solid greenyellow;
+    padding: 5px 10px;
+}
+.menu li:hover{
+    background-color: lightgray;
+}
+
+nav{
+    background-color: lightblue;
+    padding: 10px;
+}
+.Home{
+    order:4;
+    flex-grow: 1;
+}
+.About{
+    order: 3;
+    flex-grow: 1;
+}
+.Services{
+    order: 2;flex-grow: 1;
+}
+.Contacts{
+    order: 1;flex-grow: 1;
+}
