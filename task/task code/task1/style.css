@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+}
+.container{
+    background-color: black;
+    height: 25%;
+    min-height: 500px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+ul{
+    display:flex;
+    position: fixed;
+}
+li{
+    list-style: none;
+    
+
+
+}
+a{
+    text-decoration: none;
+}
+.title{
+
+}
