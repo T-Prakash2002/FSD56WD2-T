@@ -6,22 +6,28 @@
 
 }
 .griditem{
-    border: 6px solid rgb(25, 231, 197);
-    background-color: rgb(94, 146, 115);
-
+    border: 6px solid #586e85;
+    background-color: rgb(230, 181, 142);
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-
 .t{
-    grid-column: 1/ span 1;
+    grid-column: 1/ span 2;
 }
 .c{
     grid-row: 2;
 }
 .r{
-    grid-row: 2/span 2;
+    grid-row: 2/span 3;
+}
+.split{
+    display: grid;
+    border:1px solid #586e85;
+}
+.one,.two,.three{
+    width: 50%;
+    height: 100%;
 }
