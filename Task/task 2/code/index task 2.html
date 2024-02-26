@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>task 1</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+                        
+            form{
+                padding: 10%;
+                max-width: 70%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .text-danger{
+                color: red;
+            }
+
+            .layout{
+                display: grid;
+                gap: 3vh;
+
+            }
+            label{
+                font-weight: bold;
+            }
+            input[type='text']{
+                width: 30vh;height: 4vh;
+                
+            }
+            .fa-star{
+                font-size: x-large;
+                color: rgb(250, 234, 5);
+
+            }
+            .fa-star:hover{
+                color: rgba(253, 19, 19, 0.74);
+                
+            }
+            table{
+                position: relative;
+                top: 3vh;
+                width: 110%;
+            }
+            tr{
+                height: 6vh;
+            }
+            th{
+                font-weight: normal;
+            }
+            tr:nth-child(even){
+                background-color: rgb(182, 177, 177);
+            }
+            textarea{
+                width:90%;
+                height: 10vh;
+            }
+
+            button{
+                width: 15vh;
+                height: 5vh;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form method="post">
+            <div class="layout">
+
+                <div class="name grid1">
+                    <label for="name">Name <span class="text-danger">*</span></label>
+                </div>
+                <div class="iname grid1">
+                    
+                    <input type="text" name="name" id="name" placeholder="First name" required>
+                                                                           
+                    <input type="text" name="name" id="name" placeholder="Last name" required>
+                    
+                </div>
+
+                <div class="email grid1">
+                    <label for="email">Email <span class="text-danger">*</span></label>
+                </div>
+                <div class="iemail grid1">
+                    <input type="text" name="email" id="email" required>
+                </div>
+
+                <div class="rating grid1">
+                    <label for="rating">Your Experience <span class="text-danger">*</span></label>
+                </div>
+
+                <div class="irating grid1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <div class="p">
+                        <label>Overall,how would you rate experience with us?</label>
+                    </div><br>
+
+                </div>
+
+                <div class="s grid1">
+                    <label>
+                        How statisfied are with <span class="text-danger">*</span>
+                    </label><br>
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Very Unstatisfied</th>
+                                <th>Unstatisfied</th>
+                                <th>Neutral</th>
+                                <th>statisfied</th>
+                                <th>Very statisfiedth</th>
+                            </tr>
+
+                            <tr>
+                                <th>Purchese</th>
+                                <td>
+                                    <input type="radio" name="purchese">
+                                </td>
+                                <td>
+                                    <input type="radio" name="purchese">
+                                </td>
+                                <td>
+                                    <input type="radio"name="purchese">
+                                </td>
+                                <td>
+                                    <input type="radio"name="purchese">
+                                </td>
+                                <td>
+                                    <input type="radio"name="purchese">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Service</th>
+                                <td>
+                                    <input type="radio"name="services">
+                                </td>
+                                <td>
+                                    <input type="radio"name="services">
+                                </td>
+                                <td>
+                                    <input type="radio"name="services">
+                                </td>
+                                <td>
+                                    <input type="radio"name="services">
+                                </td>
+                                <td>
+                                    <input type="radio"name="services">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Company Overall</th>
+                                <td>
+                                    <input type="radio" name="c-o">
+                                </td>
+                                <td>
+                                    <input type="radio" name="c-o">
+                                </td>
+                                <td>
+                                    <input type="radio" name="c-o">
+                                </td>
+                                <td>
+                                    <input type="radio" name="c-o">
+                                </td>
+                                <td>
+                                    <input type="radio" name="c-o">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>  
+                </div>
+<br>
+                <div class="s grid1">
+                    <label>
+                        How likely are you to <span class="text-danger">*</span>
+                    </label>
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Very Unlikely</th>
+                                <th>Unlikely</th>
+                                <th>Neutral</th>
+                                <th>likely</th>
+                                <th>Very likely</th>
+                            </tr>
+
+                            <tr>
+                                <th>Buy from us again</th>
+                                <td>
+                                    <input type="radio" name="buy">
+                                </td>
+                                <td>
+                                    <input type="radio" name="buy">
+                                </td>
+                                <td>
+                                    <input type="radio"name="buy">
+                                </td>
+                                <td>
+                                    <input type="radio"name="buy">
+                                </td>
+                                <td>
+                                    <input type="radio"name="buy">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Recommmend our product to others</th>
+                                <td>
+                                    <input type="radio" name="r-p">
+                                </td>
+                                <td>
+                                    <input type="radio"name="r-p">
+                                </td>
+                                <td>
+                                    <input type="radio"name="r-p">
+                                </td>
+                                <td>
+                                    <input type="radio"name="r-p">
+                                </td>
+                                <td>
+                                    <input type="radio"name="r-p">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Recommend our company to others</th>
+                                <td>
+                                    <input type="radio" name="r-c">
+                                </td>
+                                <td>
+                                    <input type="radio" name="r-c">
+                                </td>
+                                <td>
+                                    <input type="radio" name="r-c">
+                                </td>
+                                <td>
+                                    <input type="radio" name="r-c">
+                                </td>
+                                <td>
+                                    <input type="radio" name="r-c">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>  
+                </div>
+
+                <div class="suggestions grid1">
+                    <label for="t-area">
+                        Additional comments or suggestions
+                    </label>
+
+                    <div class="itextarea">
+                      <textarea name="" id="" cols="30" rows="10"></textarea> 
+                    </div>
+                    
+                </div>
+                <div class="btn grid1">
+                    <button type="submit">
+                        Submit
+                    </button>
+                </div>
+
+            </div>
+
+
+        </form>
+    </body>
+</html>
