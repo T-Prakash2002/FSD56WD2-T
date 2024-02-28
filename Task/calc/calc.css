@@ -8,22 +8,23 @@
 .calc {
     margin: 3%;
     border-radius: 9px;   
+    min-height: fit-content;
     max-width: max-content;
-    background-color: rgba(204, 213, 221, 0.384);
+    background-color: rgba(97, 117, 116, 0.384);
     
 }
 .container{
     padding: 10px;
-    
-
 }
 .keyinput{
     display: grid;
     margin: 5%;
+    padding: 5%;
     grid-template-columns: repeat(4,1fr);
     width:90%;
+    
 }
-#input,#i{
+#result{
     position: relative;
     margin: 5%;
     padding: 5%;
@@ -31,14 +32,15 @@
     width: 90%;
     background-color:rgb(208, 214, 219);
     font-size: x-large;
-}
-input[type='button']{
-    color:;
+    
 }
 #equal{
     grid-column:3/ span 2;
-    background-color: aqua;
+    background-color: rgb(45, 78, 78);
 }
 #clear{
 color: red;
+}
+#mul,#div,#minus,#plus,#module,#backspace{
+    color: rgba(66, 63, 37, 0.699);
 }
