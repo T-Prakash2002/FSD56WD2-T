@@ -1,10 +1,11 @@
-let txta=document.getElementById('txtarea');
-let c=document.getElementById('count');
+value="HELLO"
 
+let repeat=(v,callback)=>{
+    console.log(`${v}`);
+    callback(v);
+}
 
-txta.addEventListener('input',(e)=>{
-    let message=e.target.value;
-    console.log(message.length);
-    c.innerText=message.length;
-});
-
+let a=()=>{
+    console.log(`${v}`)
+}
+repeat(value,a);
