@@ -1,10 +1,23 @@
-let txta=document.getElementById('txtarea');
-let c=document.getElementById('count');
+let p=new Promise((resolve,reject)=>{
+    let rn=Math.random()*100;
+    if(rn > 50){
+
+        resolve(rn);
+    }else{
+
+        reject(rn);
+    }
+})
+
+p
+    .then(
+        (r)=>{
+            console.log('Resolved..'+r);
+        },
+        (r)=>{
+            console.log('Rejected!..'+r);
+        }
+    )
 
 
-txta.addEventListener('input',(e)=>{
-    let message=e.target.value;
-    console.log(message.length);
-    c.innerText=message.length;
-});
-
+console.log(p);
