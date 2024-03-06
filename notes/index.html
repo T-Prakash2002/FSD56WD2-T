@@ -16,22 +16,24 @@
     <div class="container">
       <div class="row">
         <div class="col text-center">
-            <h1>Weather Search</h1>
-            <p>Enter a city name below to find the current weather</p>
+            <h1>Search Comments</h1>
+            <p>Enter a Id number below to find the all comments</p>
 
         </div>
 
       </div>
       <div class="row">
         <div class="col-9">
-            <form class="form-inline" onsubmit="getWeather(event)">
-                <input type="text"class="form form-control" placeholder="Enter City name..." name="city">
+            <form class="form-inline" onsubmit="getId(event)">
+                <input type="text"class="form form-control" placeholder="Enter Id..." name="Id">
+              <div id="form-i">
 
+              </div>
             </form>
 
         </div>
         <div class="col">
-            <button type="submit" class="btn btn-info" >Search</button>
+            <button type="submit" id="btn" class="btn btn-info" >Search</button>
         </div>
       </div>
 
