@@ -43,10 +43,7 @@ DeleteUserForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     let userId = selectedID.value;
-    // let name = document.getElementById('name').value;
-    // let username = document.getElementById('username').value;
-    // let email = document.getElementById('email').value;
-
+    
     let response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
         method: 'DELETE',
     })
@@ -54,6 +51,15 @@ DeleteUserForm.addEventListener('submit', async (e) => {
     if (response.ok) {
         alert('User deleted successfully');
         let user = await response.json();
-        console.log(user)
+        console.log(user);
+
+        let name = document.getElementById('name');
+        let username = document.getElementById('username');
+        let email = document.getElementById('email');
+    
+        name.value = '';
+        username.value = '';
+        email.value = '';
+
     }
 });
