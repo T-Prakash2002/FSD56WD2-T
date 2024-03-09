@@ -1,65 +1,28 @@
-async function fetchUsers() {
-    let response = await fetch('https://jsonplaceholder.typicode.com/users', {
-        method: 'GET',
-    });
-    let users = await response.json();
-    return users;
-}
+const url=`https://api.adviceslip.com/advice`
 
-let selectedID = document.getElementById('userIDs');
+const display=document.getElementById('display');
 
-async function loadUsers() {
-    let users = await fetchUsers();
+function setquery(query){
 
-    users.forEach(user => {
-        let option = document.createElement('option');
-        option.value = user.id;
-        option.text = user.id;
-        selectedID.appendChild(option);
-    });
+    let a=`
+    <h3>
+    <p class=" rounded-2 p-3 text-center">
+    
+        ${query.slip.advice}
+    </p>
+    </h3>
+    `
+    display.innerHTML=a;
 }
 
 
-loadUsers();
-
-selectedID.addEventListener('change', async () => {
-    let userId = selectedID.value;
-
-    let response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    let user = await response.json();
-
-    let name = document.getElementById('name');
-    let username = document.getElementById('username');
-    let email = document.getElementById('email');
-
-    name.value = user.name;
-    username.value = user.username;
-    email.value = user.email;
-});
-
-let DeleteUserForm = document.getElementById('deleteUserForm');
-
-DeleteUserForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    let userId = selectedID.value;
+async function a(){
+    let response=await fetch(url,{method:'GET'});
+    let queries=await response.json();
     
-    let response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
-        method: 'DELETE',
-    })
+    setquery(queries);
 
-    if (response.ok) {
-        alert('User deleted successfully');
-        let user = await response.json();
-        console.log(user);
+}
 
-        let name = document.getElementById('name');
-        let username = document.getElementById('username');
-        let email = document.getElementById('email');
-    
-        name.value = '';
-        username.value = '';
-        email.value = '';
 
-    }
-});
+//console.log('');
