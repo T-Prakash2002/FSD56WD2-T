@@ -3,12 +3,12 @@
 
 }
 body{
-    background:radial-gradient(rgb(202, 179, 179),rgb(138, 182, 138),rgb(187, 187, 206)); 
+    background:radial-gradient(rgb(143, 152, 161),rgba(138, 182, 138, 0.247),rgb(187, 187, 206)); 
 }
 .container{
     max-width: 600px;
     box-shadow: 0 0 10px ;
-    background-color: #ced6d3;
+    background-color: #77af9a;
 }
 
 .card{
