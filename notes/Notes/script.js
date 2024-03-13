@@ -1,28 +1,44 @@
 const url=`https://api.adviceslip.com/advice`
 
-const display=document.getElementById('display');
+const display=document.querySelector('.display');
 
-function setquery(query){
 
-    let a=`
+// Fetch The Data in URL 
+function fetchurl(){
+
+    return fetch(url)
+        .then(response=>response.json())
+        .catch(()=>{
+            console.log("Fetch Advice data Error");
+        })
+        
+}
+
+//To Display the Advice..
+
+function setquery(quotes){
+
+    let word=`
     <h3>
     <p class=" rounded-2 p-3 text-center">
     
-        ${query.slip.advice}
+        ${quotes.slip.advice}
     </p>
     </h3>
-    `
-    display.innerHTML=a;
+    `;
+
+    alert(quotes.slip.advice);
+    display.innerHTML=word;
 }
 
+// To get Action when button clicked event..
 
-async function a(){
-    let response=await fetch(url,{method:'GET'});
-    let queries=await response.json();
+function generateQuotes(){
+
+    fetchurl().then((quotes)=>{
+        setquery(quotes);
+    })
     
-    setquery(queries);
 
 }
 
-
-//console.log('');
