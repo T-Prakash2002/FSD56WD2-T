@@ -1,8 +1,6 @@
 
 const Apikey='e279ad601d9b438681641dec8fb7c873';
 
-
-
 const d=document.getElementById('display');
 
 async function fetchurl(ip){
@@ -19,7 +17,7 @@ async function fetchurl(ip){
 function display(query){
 
     const card=document.createElement('div');
-        card.className='col  bg-body-secondary p-3 rounded';
+        card.className='col bg-body-secondary p-3 rounded';
         card.innerHTML=`
                     <h3 class="pb-2">Details</h3>
                     <div class="card rounded p-2">
