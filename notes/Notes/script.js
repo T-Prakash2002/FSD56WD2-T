@@ -5,19 +5,24 @@ const Apikey='e279ad601d9b438681641dec8fb7c873';
 
 const d=document.getElementById('display');
 
-async function fetchurl(ip){
-    const options = {method: 'GET'};
+function fetchurl(ip){
 
 
-    let response=await fetch(`https://ipgeolocation.abstractapi.com/v1/?api_key=${Apikey}&ip_address=${ip}`,options);
 
-    let  res=await response.json();
+    return fetch(`https://ipgeolocation.abstractapi.com/v1/?api_key=${Apikey}&ip_address=${ip}`)
+    .then(response=>response.json())
+    .catch(()=>{
+        console.log("Fetch Data Error!!")
+    })
 
-    return (res);
+
 }
 
 function display(query){
 
+    if(query.connection.autonomous_system_organization){
+
+    
     const card=document.createElement('div');
         card.className='col  bg-body-secondary p-3 rounded';
         card.innerHTML=`
@@ -55,12 +60,25 @@ function display(query){
         `
 d.appendChild(card);
 }
-
-async function s(){
+else{
+    console.log("Check IP Address..")
+}
+}
+function error(){
+    alert("Enter Valid Address!");
+    
+}
+ function GenerateDetails(){
     let ip=document.getElementById('ip').value;
     
-    let response=await fetchurl(ip);
+    fetchurl(ip).then((data)=>{
+
+        (data.error)?error():display(data);
+
+    }).catch((e)=>{
+        console.log("Error Fetching "+e);
+    });
    
-    display(response);
+    
 
 }
