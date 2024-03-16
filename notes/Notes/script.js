@@ -1,64 +1,72 @@
+const Allurl=`https://emojihub.yurace.pro/api/all`;
 
-const Apikey='e279ad601d9b438681641dec8fb7c873';
+const RandomUrl=`https://emojihub.yurace.pro/api/random/category/smileys-and-people`;
 
-const d=document.getElementById('display');
+const displayAll=document.getElementById("displayAll");
 
-async function fetchurl(ip){
-    const options = {method: 'GET'};
+const DisplayRandom=document.getElementById("randomemoji");
+
+async function AllfetchUrl(url){
+
+    return fetch(url)
+        .then(response=>response.json())
+        .catch(()=>{
+            console.log("Fetch Advice data Error");
+        })
 
 
-    let response=await fetch(`https://ipgeolocation.abstractapi.com/v1/?api_key=${Apikey}&ip_address=${ip}`,options);
-
-    let  res=await response.json();
-
-    return (res);
 }
 
-function display(query){
+function Display(emoji,display){
 
     const card=document.createElement('div');
-        card.className='col bg-body-secondary p-3 rounded';
+        card.className='col col-lg-2 col-sm-6 col-md-3 h-100 p-4 h-50';
         card.innerHTML=`
-                    <h3 class="pb-2">Details</h3>
-                    <div class="card rounded p-2">
-                        <div class="card-header">
-                        <h2>${query.connection.autonomous_system_organization}</h2>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>IP Address:</strong>  ${query.ip_address}</p>
-
-                            <p><strong>Connection_Type:</strong> ${query.connection.connection_type}</p>
-
-                            <p><strong>Continent:</strong> ${query.continent}</p>
-
-                            <p><strong>Country:</strong> ${query.country}</p>
-
-                            <p><strong>Region:</strong> ${query.region}</p>
-
-                            <p><strong>City:</strong> ${query.city}</p>
-
-                            <p><strong>City:</strong> ${query.postal_code}</p>
-
-                            <p><strong>Lon:</strong> ${query.longitude}</p>
-
-                            <p><strong>Lat:</strong> ${query.latitude}</p>
-
-                            <p><strong>Current_time:</strong> ${query.timezone.current_time}</p>
-
-                            <p><strong>Currency:</strong> ${query.currency.currency_name}</p>
-
-                        </div>
-                    </div>
-
+            <div class="card border-0 p-2" id="${emoji.name}">
+            <a href="#search-row" class="link-secondary link-offset-2 link-underline-opacity-0">
+                <div class="card-img-top text-center pt-5">
+                    <h1><span>${emoji.htmlCode[0]}</span></h1>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">${emoji.name}</h5>
+                    <p class="card-text">Category: ${emoji.category}</p>
+                    <p class="card-text">Group: ${emoji.group}</p>
+                </div>
+               </a>
+            </div>   
+       
         `
-d.appendChild(card);
+
+    display.appendChild(card);
+}
+async function loadEmoji(){
+
+    AllfetchUrl(Allurl).then((response)=>{
+        response.map((data)=>{
+        Display(data,displayAll);
+    })
+    })
+
 }
 
-async function s(){
-    let ip=document.getElementById('ip').value;
+loadEmoji();
+
+
+async function Clickbtn(){
+
+   AllfetchUrl(RandomUrl).then((response)=>{
     
-    let response=await fetchurl(ip);
-   
-    display(response);
-
+    let emoji=`
+        <div class="card text-center emoji">
+        <a class="link-danger link-offset-2 link-underline-opacity-0" href="#${response.name}">
+            <h1 class="logo pt-5">${response.htmlCode[0]}</h1>
+                    <h5 class="pt-5">${response.name}</h5>
+        </a>
+                
+        </div>
+    `
+        DisplayRandom.innerHTML=emoji;
+    })
+    
 }
+
